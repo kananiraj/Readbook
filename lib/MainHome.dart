@@ -50,6 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
     
       drawer: Sidedrawer(),
       body: _pageOption[_selectpage],
+      backgroundColor: Colors.green[200],
       bottomNavigationBar: ConvexAppBar(
         color: Colors.black,
         backgroundColor: Colors.white,

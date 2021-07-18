@@ -98,7 +98,11 @@ class _HomeState extends State<Home> {
                           duration: Duration(milliseconds: 400),
                           curve: Curves.linear);
                     },
-                    child: Text("SKIP",style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                    child: Text(
+                      "SKIP",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
                   ),
                   Row(
                     children: [
@@ -114,7 +118,11 @@ class _HomeState extends State<Home> {
                           duration: Duration(microseconds: 500),
                           curve: Curves.linear);
                     },
-                    child: Text("NEXT" , style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                    child: Text(
+                      "NEXT",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
@@ -132,7 +140,9 @@ class _HomeState extends State<Home> {
                       child: Text(
                         "LET'S GET STARTED",
                         style: TextStyle(
-                            color: Colors.black, fontSize : 15 ,fontWeight: FontWeight.bold),
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                   ),
@@ -167,9 +177,7 @@ class Slider extends StatelessWidget {
       //alignment: Alignment.center,
       padding: EdgeInsets.fromLTRB(30, 100, 30, 0),
       child: Column(
-        
         children: [
-         
           Container(child: Image.asset(imageasset)),
           SizedBox(
             height: 30,
@@ -178,7 +186,7 @@ class Slider extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Container(
                 //alignment: Alignment.centerLeft,
-          
+
                 margin: EdgeInsets.all(10),
                 padding: EdgeInsets.all(10),
                 decoration: BoxDecoration(
@@ -192,11 +200,12 @@ class Slider extends StatelessWidget {
                       BoxShadow(
                           blurRadius: 10,
                           color: Colors.orange,
-                          offset: Offset(0.5,0.5))
+                          offset: Offset(0.5, 0.5))
                     ] // Make rounded corner of border
                     ),
                 child: Text(title,
-                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
+                    style:
+                        TextStyle(fontSize: 40, fontWeight: FontWeight.bold))),
           ),
           SizedBox(
             height: 20,
@@ -206,7 +215,8 @@ class Slider extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Container(
                 child: Text(
-              des,style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+              des,
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
             )),
           ),
         ],

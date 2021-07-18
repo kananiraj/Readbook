@@ -26,7 +26,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> with TickerProviderStateMixin {
   String dropdownValue = 'One';
   late TabController _tabController;
-   final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   bool isLogggedin = false;
   late User user;
 
@@ -52,6 +52,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
       });
     }
   }
+
   @override
   void initState() {
     super.initState();
@@ -69,13 +70,13 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     return Scaffold(
         body: DefaultTabController(
+          
       length: 9,
       child: Scaffold(
         appBar: AppBar(
           title: Text(
             "Home Page",
-            style: TextStyle(
-                color:Colors.black, fontWeight: FontWeight.bold),
+            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
           backgroundColor: Colors.white,
           // iconTheme: IconThemeData(color: Colors.green),
@@ -93,7 +94,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
               child: new TabBar(
                 controller: _tabController,
                 isScrollable: true,
-                labelColor: Colors.black,
+                labelColor: Colors.white,
                 unselectedLabelColor: Colors.black,
                 indicator: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
@@ -104,7 +105,7 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                         offset: Offset(-1, 1),
                       ),
                     ],
-                    color: Colors.orange[300]),
+                    color: Colors.green[900]),
                 // onTap: (index) {
                 //   switch (index) {
                 //     case 0:
@@ -148,114 +149,103 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
                 //   }
                 // },
                 tabs: [
-                 
-
-                     Tab(
-                        child: Text(
-                        'Action and Adventure',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
+                  Tab(
+                    child: Text(
+                      'Action and Adventure',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
                       ),
-                    
+                    ),
                   ),
                   Tab(
-                      child: Text(
-                        'Detective and Mystery',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    
-                  ),
-                   Tab(
-                      child: Text(
-                        'Historical Fiction',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      
-                    ),
-                  ),
-                 Tab(
-                      child: Text(
-                        'Comic Book',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    
-                  ),
-                   Tab(
-                      child: Text(
-                        'Horror',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    
-                  ),
-                   Tab(
-                      child: Text(
-                        'Romance',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      
-                    ),
-                  ),
-                   Tab(
-                      child: Text(
-                        'Science Fiction',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    
-                  ),
-                   Tab(
-                      child: Text(
-                        'Educational',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
+                    child: Text(
+                      'Detective and Mystery',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
                       ),
                     ),
-                  
-                 Tab(
-                      child: Text(
-                        'Other',
-                        style: TextStyle(
-                          fontSize: 18.0,
-                          fontFamily: 'Inter',
-                          fontWeight: FontWeight.w600,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      
+                  ),
+                  Tab(
+                    child: Text(
+                      'Historical Fiction',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'Comic Book',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'Horror',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'Romance',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'Science Fiction',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'Educational',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      'Other',
+                      style: TextStyle(
+                        fontSize: 18.0,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.normal,
+                      ),
                     ),
                   ),
                 ],
@@ -263,27 +253,23 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
             ),
           ),
         ),
-        body:TabBarView(
-          controller:_tabController,
-          
-
-         
-          children: [
-
-            Actionadvanture(),
-            DetectiveMystery(),
-            HistoricalFication(),
-            ComicBook(),
-            Horror(),
-            Romance(),
-            ScienceFiction(),
-            Educational(),
-            Other(),
-
-          
-        ],),
+        body: Container(
+          child: TabBarView(
+            controller: _tabController,
+            children: [
+              Actionadvanture(),
+              DetectiveMystery(),
+              HistoricalFication(),
+              ComicBook(),
+              Horror(),
+              Romance(),
+              ScienceFiction(),
+              Educational(),
+              Other(),
+            ],
+          ),
+        ),
         drawer: Sidedrawer(),
-        backgroundColor: Colors.grey[300],
         floatingActionButton: FloatingActionButton(
           child: Icon(Icons.add),
           foregroundColor: Colors.white,

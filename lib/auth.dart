@@ -14,7 +14,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:readb/story.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-
 //void main() => runApp(Auth());
 
 class Auth extends StatelessWidget {
@@ -28,9 +27,9 @@ class Auth extends StatelessWidget {
         primaryColor: Color(0xff9C58D2),
       ),
       home: GoogleSignApp(),
-      routes: <String, WidgetBuilder> {
+      routes: <String, WidgetBuilder>{
         '/discription': (BuildContext context) => new discription(),
-        '/story' : (BuildContext context) => new story(),
+        '/story': (BuildContext context) => new story(),
       },
     );
   }
@@ -48,8 +47,7 @@ class _GoogleSignAppState extends State<GoogleSignApp> {
 
   bool isLoading = false;
 
-
- void initState() {
+  void initState() {
     // TODO: implement initState
     super.initState();
     //navigateUser();
@@ -73,29 +71,82 @@ class _GoogleSignAppState extends State<GoogleSignApp> {
           fit: StackFit.expand,
           children: <Widget>[
             Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               children: <Widget>[
                 SizedBox(height: 10.0),
                 Container(
-                    width: 250.0,
+                  margin: EdgeInsets.fromLTRB(10, 120, 0, 0),
+                  // alignment: Alignment.centerLeft,
+                  child: Container(
+                      padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                      alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(left: 10),
+                      child: RichText(
+                          text: TextSpan(
+                              text: 'Sign in',
+                              style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                              children: <TextSpan>[
+                            TextSpan(
+                                text: ' Yourself',
+                                style: TextStyle(
+                                    color: Colors.lightBlue[300],
+                                    fontSize: 40,
+                                    fontWeight: FontWeight.bold))
+                          ]))),
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  alignment: Alignment.centerLeft,
+                  margin: EdgeInsets.only(left: 10),
+                  // alignment: Alignment.centerLeft,
+                  child: Container(
+                      child: Text(
+                    ' To Explore',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  )),
+                ),
+                Container(
+                  padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                  alignment: Alignment.centerLeft,
+                  margin: EdgeInsets.only(left: 10),
+                  // alignment: Alignment.centerLeft,
+                  child: Container(
+                      child: Text(
+                    ' More',
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  )),
+                ),
+                Container(
+                  child: Image.asset(
+                    'images/logo.png',
+                    height: 350,
+                    width: 350,
+                  ),
+                ),
+                Container(
+                    width: 350.0,
+                    height: 50,
                     child: Align(
                       alignment: Alignment.center,
                       child: RaisedButton(
                           shape: RoundedRectangleBorder(
-                              borderRadius: new BorderRadius.circular(30.0)),
+                              borderRadius: new BorderRadius.circular(15.0)),
                           color: Color(0xffffffff),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Icon(
                                 FontAwesomeIcons.google,
-                                color: Colors.indigo[900],
+                                 color: Colors.lightBlue[500],
                               ),
                               SizedBox(width: 10.0),
                               Text(
                                 'Sign in with Google',
                                 style: TextStyle(
-                                    color: Colors.black, fontSize: 18.0),
+                                    color: Colors.black, fontSize: 22.0),
                               ),
                             ],
                           ),
@@ -140,7 +191,6 @@ class _GoogleSignAppState extends State<GoogleSignApp> {
                                                         )),
                                                     SizedBox(height: 20),
                                                     ElevatedButton(
-                                                      
                                                         onPressed: () {
                                                           Navigator.of(context)
                                                               .pop();
@@ -152,7 +202,6 @@ class _GoogleSignAppState extends State<GoogleSignApp> {
                                                                         MainHome(),
                                                               ));
                                                         },
-                                                        
                                                         child: Text(
                                                           'Ok',
                                                           style: TextStyle(
