@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:readb/allsection/ActionAdvanture.dart';
 
@@ -15,6 +16,7 @@ class _discriptionState extends State<discription> {
   late String BookTitle;
   late String BookDiscri;
   late String BookStory;
+  late String BookAuth;
 
   @override
   Widget build(BuildContext context) {
@@ -23,12 +25,13 @@ class _discriptionState extends State<discription> {
     BookTitle = arguments['Title'];
     BookDiscri = arguments['Discription'];
     BookStory = arguments['Story'];
+    BookAuth = arguments['Author'];
 
     return Scaffold(
       appBar: AppBar(
         //backgroundColor: Color(0xDDff5954),
         title: Text(
-          '$BookTitle',
+          'About',
           style: GoogleFonts.poppins(
               color: Colors.black, fontWeight: FontWeight.w500),
         ),
@@ -46,7 +49,7 @@ class _discriptionState extends State<discription> {
         child: Column(
           children: [
             Container(
-              margin: const EdgeInsets.all(20),
+              margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(15)),
                   color: Color(0xffFFC341),
@@ -60,18 +63,10 @@ class _discriptionState extends State<discription> {
               child: Hero(
                   tag: '$BookImg',
                   child: Container(
+                    alignment: Alignment.centerLeft,
                     height: 150,
-                    margin: EdgeInsets.all(20),
+                    margin: EdgeInsets.only(top: 20, bottom: 20),
                     width: MediaQuery.of(context).size.width,
-                    child: Container(
-                        // child: Text(
-                        //   " Free of Cost! ",
-                        //   style: TextStyle(
-                        //       fontSize: 20,
-                        //       fontWeight: FontWeight.w300,
-                        //       color: Colors.black),
-                        // ),
-                        ),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       image: DecorationImage(
@@ -79,6 +74,37 @@ class _discriptionState extends State<discription> {
                       ),
                     ),
                   )),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "$BookTitle",
+                    style: GoogleFonts.poppins(
+                        fontSize: 30, fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "By " + "$BookAuth",
+                    style: TextStyle(
+                        fontSize: 17,
+                        color: Colors.grey,
+                        fontWeight: FontWeight.w600),
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 10,
@@ -100,35 +126,42 @@ class _discriptionState extends State<discription> {
               height: 10,
             ),
             Container(
+              padding: EdgeInsets.only(left: 20, right: 20),
               child: Column(
                 children: [Text('$BookDiscri')],
               ),
             ),
-            Container(
-              padding: EdgeInsets.only(top: 30, bottom: 20),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(15)),
-              ),
-              // ignore: deprecated_member_use
-              child: RaisedButton(
-                padding:
-                    EdgeInsets.only(left: 50, top: 10, right: 50, bottom: 10),
-                onPressed: () {
-
-                    Navigator.of(context).pushNamed('/story',
-                    arguments: {'Story' : '$BookStory' , 'Title' : '$BookTitle'});
-
-                },
-                color: Color(0xff2657ce),
-                shape: new RoundedRectangleBorder(
-                  borderRadius: new BorderRadius.circular(15.0),
-                ),
-                child: Text(
-                  "Read Story....",
-                  style: GoogleFonts.poppins(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
+            Expanded(
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  //alignment: Alignment.FractionalOffset.bottomCenter,,
+                  padding: EdgeInsets.only(top: 30, bottom: 20),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                  ),
+                  // ignore: deprecated_member_use
+                  child: RaisedButton(
+                    padding: EdgeInsets.only(
+                        left: 50, top: 10, right: 50, bottom: 10),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed('/story', arguments: {
+                        'Story': '$BookStory',
+                        'Title': '$BookTitle'
+                      });
+                    },
+                    color: Color(0xff2657ce),
+                    shape: new RoundedRectangleBorder(
+                      borderRadius: new BorderRadius.circular(15.0),
+                    ),
+                    child: Text(
+                      "Read Story....",
+                      style: GoogleFonts.poppins(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    ),
+                  ),
                 ),
               ),
             )

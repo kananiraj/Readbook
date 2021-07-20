@@ -34,6 +34,7 @@ class _ActionadvantureState extends State<Actionadvanture> {
     return Scaffold(
       body: Container(
         // decoration: new BoxDecoration(color: Colors.green[50]),
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
 
         child: StreamBuilder<QuerySnapshot>(
           stream: FirebaseFirestore.instance
@@ -69,104 +70,78 @@ Widget PostUI(String image, String Title, String Story, String Author,
     String Discription) {
   return new Card(
     color: Colors.green[50],
-    shadowColor: Colors.white70,
-    child: Container(
-      margin: EdgeInsets.fromLTRB(10, 10, 10, 15),
-      child: Builder(
-        builder: (context) => Container(
-          // padding:EdgeInsets.fromLTRB(10, 10, 10, 15) ,
-          child: Row(
-            children: <Widget>[
-              Column(
-                children: [
-                  Container(
-                    child: Container(
-                      height: 150,
-                      width: 90,
-                      margin: EdgeInsets.fromLTRB(10, 10, 10, 15),
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: NetworkImage(image), fit: BoxFit.fill),
-                          borderRadius: BorderRadius.circular(10),
-                          boxShadow: [
-                            BoxShadow(offset: Offset(5, 5), blurRadius: 5),
-                          ]),
-                    ),
+    // shadowColor: Colors.white70,
+    child: Builder(
+      builder: (context) => Container(
+        padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+        child: Row(
+          children: <Widget>[
+            Column(
+              children: [
+                Container(
+                  height: 120,
+                  width: 90,
+                  margin: EdgeInsets.fromLTRB(3, 10, 10, 15),
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: NetworkImage(image), fit: BoxFit.fill),
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                ],
-              ),
-              SizedBox(
-                width: 30,
-              ),
-              Column(
-                children: [
-                  Container(
-                    padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
-                    margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        Text(
-                          '$Title',
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          "By" + " $Author",
-                          style: TextStyle(color: Colors.black45),
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                      ],
-                    ),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 10,
+            ),
+            Column(
+              children: [
+                Container(
+                  // padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
+                  // margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      Text(
+                        '$Title',
+                        style: TextStyle(
+                            fontSize: 20, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                      Text(
+                        "By" + " $Author",
+                        style: TextStyle(color: Colors.black45),
+                      ),
+                      SizedBox(
+                        height: 5,
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              Column(
-                children: [
-                  Container(
-                    // padding: EdgeInsets.only(top: 20, bottom: 20),
-                    alignment: Alignment.centerRight,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(10)),
-                    ),
+                ),
+              ],
+            ),
+            Container(
+                              alignment: Alignment.topLeft,
 
-                    // ignore: deprecated_member_use
-                    child: RaisedButton(
-                      //crossAxisAlignment: CrossAxisAlignment.end,
-                      padding: EdgeInsets.only(
-                          left: 10, top: 10, right: 10, bottom: 10),
-                      onPressed: () {
-                        Navigator.of(context)
-                            .pushNamed('/discription', arguments: {
-                          'image': '$image',
-                          'Title': '$Title',
-                          'Discription': '$Discription',
-                          'Story': '$Story'
-                        });
-                      },
-                      color: Color(0xff2657ce),
-                      shape: new RoundedRectangleBorder(
-                        borderRadius: new BorderRadius.circular(15.0),
-                      ),
-                      child: Text(
-                        "Explore",
-                        style: GoogleFonts.poppins(
-                            fontSize: 10,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white),
-                      ),
-                    ),
-                  ),
-                ],
-              )
-            ],
-          ),
+              child: Align(
+                child: IconButton(
+                  icon: Icon(Icons.arrow_forward_ios),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/discription', arguments: {
+                      'image': '$image',
+                      'Title': '$Title',
+                      'Discription': '$Discription',
+                      'Story': '$Story',
+                      'Author':'$Author'
+                    });
+                  },
+                ),
+              ),
+            ),
+          ],
         ),
+        
       ),
     ),
   );
