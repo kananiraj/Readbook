@@ -45,14 +45,17 @@ class _discriptionState extends State<discription> {
           color: Colors.black,
         ),
       ),
+        resizeToAvoidBottomInset: false, // set it to false
+
       body: Container(
+        
         child: Column(
           children: [
             Container(
               margin: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(15)),
-                  color: Color(0xffFFC341),
+                  color: Colors.orange[500],
                   boxShadow: [
                     BoxShadow(
                       color: Colors.yellow,
@@ -86,7 +89,7 @@ class _discriptionState extends State<discription> {
                   Text(
                     "$BookTitle",
                     style: GoogleFonts.poppins(
-                        fontSize: 30, fontWeight: FontWeight.w600),
+                        fontSize: 25, fontWeight: FontWeight.w600),
                   ),
                 ],
               ),
@@ -127,8 +130,10 @@ class _discriptionState extends State<discription> {
             ),
             Container(
               padding: EdgeInsets.only(left: 20, right: 20),
-              child: Column(
-                children: [Text('$BookDiscri')],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [Text('$BookDiscri')],
+                ),
               ),
             ),
             Expanded(
@@ -150,7 +155,7 @@ class _discriptionState extends State<discription> {
                         'Title': '$BookTitle'
                       });
                     },
-                    color: Color(0xff2657ce),
+                    color: Colors.orange[500],
                     shape: new RoundedRectangleBorder(
                       borderRadius: new BorderRadius.circular(15.0),
                     ),

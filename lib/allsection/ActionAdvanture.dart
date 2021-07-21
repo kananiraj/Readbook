@@ -31,6 +31,7 @@ class _ActionadvantureState extends State<Actionadvanture> {
   late String titlev;
 
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         // decoration: new BoxDecoration(color: Colors.green[50]),
@@ -65,14 +66,16 @@ class _ActionadvantureState extends State<Actionadvanture> {
     );
   }
 }
-
 Widget PostUI(String image, String Title, String Story, String Author,
-    String Discription) {
+    String Discription)
+     {
+  var c_width;
   return new Card(
-    color: Colors.green[50],
+    color: Colors.white,
     // shadowColor: Colors.white70,
     child: Builder(
       builder: (context) => Container(
+
         padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
         child: Row(
           children: <Widget>[
@@ -96,7 +99,9 @@ Widget PostUI(String image, String Title, String Story, String Author,
             Column(
               children: [
                 Container(
-                  // padding: EdgeInsets.fromLTRB(0, 0, 0, 80),
+                  width: 150,
+
+                   padding: EdgeInsets.fromLTRB(0, 20, 0, 80),
                   // margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -122,8 +127,6 @@ Widget PostUI(String image, String Title, String Story, String Author,
               ],
             ),
             Container(
-                              alignment: Alignment.topLeft,
-
               child: Align(
                 child: IconButton(
                   icon: Icon(Icons.arrow_forward_ios),
@@ -133,7 +136,7 @@ Widget PostUI(String image, String Title, String Story, String Author,
                       'Title': '$Title',
                       'Discription': '$Discription',
                       'Story': '$Story',
-                      'Author':'$Author'
+                      'Author': '$Author'
                     });
                   },
                 ),
@@ -141,7 +144,6 @@ Widget PostUI(String image, String Title, String Story, String Author,
             ),
           ],
         ),
-        
       ),
     ),
   );

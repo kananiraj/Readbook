@@ -51,7 +51,7 @@ class _UploadBookState extends State<UploadBook> {
             padding: EdgeInsets.only(right: 10.0, top: 10, bottom: 10),
             child: RaisedButton(
               textColor: Colors.white,
-              color: Colors.indigo[900],
+              color: Colors.orange,
               child: Text("Post"),
               onPressed: isuploading ? null : () => handleSubmit(),
               shape: new RoundedRectangleBorder(
@@ -68,9 +68,9 @@ class _UploadBookState extends State<UploadBook> {
         child: Theme(
           data: ThemeData(
               // ignore: deprecated_member_use
-              accentColor: Colors.indigo[900],
-              primarySwatch: Colors.indigo,
-              colorScheme: ColorScheme.light(primary: Colors.indigo)),
+              accentColor:Colors.orange,
+              primarySwatch:Colors.orange,
+              colorScheme: ColorScheme.light(primary: Colors.orange)),
           child: Column(
             children: [
               isuploading ? LinearProgressIndicator() : Text(" "),
@@ -109,7 +109,7 @@ class _UploadBookState extends State<UploadBook> {
                             toastLength: Toast.LENGTH_SHORT,
                             gravity: ToastGravity.BOTTOM,
                             timeInSecForIosWeb: 1,
-                            backgroundColor: Colors.indigo[900],
+                            backgroundColor: Colors.orange,
                             textColor: Colors.white,
                             fontSize: 16.0);
 
@@ -395,7 +395,7 @@ class _UploadBookState extends State<UploadBook> {
               TextFormField(
                 controller: fnamecon,
                 decoration: InputDecoration(
-                    labelText: 'Problem Title',
+                    labelText: 'Story Title',
                     errorText: require ? "Value cannot be empty" : null),
               ),
             ],
@@ -412,13 +412,15 @@ class _UploadBookState extends State<UploadBook> {
                 decoration: InputDecoration(
                     labelText: 'Write a Discription',
                     errorText: require ? "Value cannot be empty" : null),
+                    maxLength: 500,
+
               ),
             ],
           ),
           isActive: _currentStep >= 4,
           state: StepState.disabled),
       Step(
-          title: Text('Problem'),
+          title: Text('Story'),
           content: Column(
             children: <Widget>[
               TextFormField(
@@ -427,7 +429,7 @@ class _UploadBookState extends State<UploadBook> {
                 keyboardType: TextInputType.multiline,
                 maxLines: null,
                 decoration: InputDecoration(
-                    labelText: "Write a problem",
+                    labelText: "Write a Story",
                     errorText: require ? "Value can't be empty" : null),
                 controller: probcon,
               ),

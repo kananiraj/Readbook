@@ -6,7 +6,7 @@ import 'package:readb/Home.dart';
 import 'package:readb/Profile.dart';
 import 'package:readb/Sidedrawer.dart';
 import 'package:readb/discription.dart';
-import 'package:readb/section.dart';
+import 'package:readb/Bookmark.dart';
 import 'package:readb/story.dart';
 
 // void main() async {
@@ -61,7 +61,7 @@ class _MyHomePageState extends State<MyHomePage> {
             title: 'Home',
           ),
          
-          TabItem(icon: Icons.article, title: 'Section'),
+          TabItem(icon: Icons.article, title: 'Bookmark'),
            TabItem(icon: Icons.forum, title: 'Profile'),
          // TabItem(icon: Icons.person, title: 'Profile'),
         ],

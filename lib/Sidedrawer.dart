@@ -44,6 +44,9 @@ class Sidedrawer extends StatelessWidget {
                             image: NetworkImage(user.photoURL.toString()),
                             fit: BoxFit.fill),
                       )),
+                      SizedBox(
+                        height: 10,
+                      ),
                   Text(
                     user.displayName.toString(),
                     // user.displayName,
@@ -54,15 +57,7 @@ class Sidedrawer extends StatelessWidget {
                       color: Colors.black,
                     ),
                   ),
-                  Text(
-                    // _auth.currentUser.email,
-                    user.email.toString(),
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 15,
-                      color: Colors.black,
-                    ),
-                  )
+                  
                 ],
               ),
             ),

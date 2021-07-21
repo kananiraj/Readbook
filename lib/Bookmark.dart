@@ -15,7 +15,7 @@ class section extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            "Category",
+            "Bookmark",
             style: TextStyle(color: Colors.indigo[900], fontWeight: FontWeight.bold),
           ),
           backgroundColor: Colors.white,
