@@ -84,18 +84,7 @@ class Profile extends StatelessWidget {
                 height: 0.6,
                 color: Colors.black87,
               ),
-              ListTile(
-                leading: Icon(Icons.phone),
-                title: Text("1234567890"),
-              ),
-              Divider(
-                height: 0.6,
-                color: Colors.black87,
-              ),
-              ListTile(
-                leading: Icon(Icons.location_on),
-                title: Text("SomeWhere"),
-              )
+             
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:readb/Profile.dart';
 import 'package:readb/auth.dart';
 import 'package:readb/main.dart';
 import 'package:readb/Home.dart';
@@ -70,7 +71,10 @@ class Sidedrawer extends StatelessWidget {
                 fontSize: 18,
               ),
             ),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Profile()));
+            },
           ),
           ListTile(
             leading: Icon(Icons.share),
