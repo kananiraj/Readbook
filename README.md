@@ -13,6 +13,11 @@ so that upload book one can see in whatever category book fall for.
 
 ## Small glimpse of my App
 
-https://user-images.githubusercontent.com/61055497/126862499-739a2d92-6c0a-4899-9264-1d2379b6aa6a.mp4
+https://user-images.githubusercontent.com/61055497/126862645-0d3260bd-71dd-4382-81d7-3402adbd64d8.mp4
+
+## Here PPT of App
+
+[Ebook App.pptx](https://github.com/kananiraj/Readbook/files/6872115/Ebook.App.pptx)
+
 
 
