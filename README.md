@@ -11,4 +11,8 @@ so in this app one can add book by giving some basic detail about themselves and
 Here book is arrenged by category like Horror , romantic ,Thriller etc....
 so that upload book one can see in whatever category book fall for.
 
-## Small glimpse of my video
+## Small glimpse of my App
+
+https://user-images.githubusercontent.com/61055497/126862499-739a2d92-6c0a-4899-9264-1d2379b6aa6a.mp4
+
+
